@@ -1,6 +1,14 @@
+require("dotenv").config();
+
 const { Pool } = require("pg");
 
-const pool = new Pool({ database: "shopping_list" });
+console.log(process.env.DB_PASSWORD);
+
+const pool = new Pool({
+  database: process.env.DB_NAME,
+  username: process.env.DB_USER_USERNAME,
+  password: process.env.DB_USER_PASSWORD,
+});
 
 async function query(text, params) {
   return await pool.query(text, params);
