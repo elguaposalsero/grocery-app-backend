@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "config-db": "node ./utils/create-db.js",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "buildui": "rm -rf build && cd ../grocery-app-frontend/ && npm run build && cp -r build ../grocery-app-backend"
   },
   "author": "",
   "license": "ISC",
